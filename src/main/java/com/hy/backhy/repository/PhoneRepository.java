@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-@RepositoryRestResource(collectionResourceRel = "phone", path = "phone")
 public interface PhoneRepository extends JpaRepository<Phone,String> {
 
     @Query(value="SELECT * FROM phone", nativeQuery = true)

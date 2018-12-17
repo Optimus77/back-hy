@@ -8,15 +8,9 @@ import javax.persistence.*;
 @Table(name="pc")
 public class PC {
     @Id
-    @GenericGenerator(name = "system-uuid", strategy = "uuid2")
-    @GeneratedValue(generator = "system-uuid")
-    @Column(name ="id")
     private String id;
-    @Column(name ="name")
     private String name;
-    @Column(name ="price")
     private String price;
-    @Column(name ="title")
     private String title;
 
     public PC() {
