@@ -12,7 +12,7 @@ import java.util.List;
 
 @Repository
 @RepositoryRestResource(collectionResourceRel = "pc", path = "pc")
-public interface PcRepository extends JpaRepository<Phone,String> {
+public interface PcRepository extends JpaRepository<PC,String> {
 
     @Query(value="SELECT * FROM pc", nativeQuery = true)
     List<PC> getPCList();
