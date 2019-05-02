@@ -6,6 +6,7 @@ import com.hy.backhy.entity.PC;
 import com.hy.backhy.entity.Phone;
 import com.hy.backhy.repository.PcRepository;
 import com.hy.backhy.repository.PhoneRepository;
+import com.hy.backhy.repository.testInter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +16,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.*;
 
 @RestController
 @SpringBootApplication
@@ -31,6 +34,7 @@ public class BackHyApplication {
 
 	@RequestMapping("/${Phone}")
 	ResponseEntity phone(){
+
 		JSONObject data=new JSONObject();
 		JSONArray phones=new JSONArray();
 		List<Phone> phoneList= phoneRepo.getPhoneList();
@@ -62,6 +66,7 @@ public class BackHyApplication {
 
 		return new ResponseEntity<>(data, HttpStatus.OK);
 	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackHyApplication.class, args);
