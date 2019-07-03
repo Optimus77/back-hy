@@ -16,4 +16,6 @@ public interface PcRepository extends JpaRepository<PC,String> {
     @Query(value="SELECT * FROM pc", nativeQuery = true)
     List<PC> getPCList();
 
+    List<PC> findAll();
+
 }

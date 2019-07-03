@@ -15,4 +15,7 @@ public interface PhoneRepository extends JpaRepository<Phone,String> {
     @Query(value="SELECT * FROM phone", nativeQuery = true)
     List<Phone> getPhoneList();
 
+
+
+
 }
