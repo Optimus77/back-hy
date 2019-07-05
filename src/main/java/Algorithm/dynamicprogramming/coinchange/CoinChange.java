@@ -19,6 +19,9 @@ public class CoinChange {
     static Map<Integer,Integer> memo2 = new HashMap<>();
     static Map<Integer,Integer> memo3 = new HashMap<>();
 
+    /*
+        1. 根据方程写出暴力递归的解法
+    */
     public static  int  Solution1_Force (int n) {
         if (n==0) return 0;
         int min =-2;
@@ -36,6 +39,9 @@ public class CoinChange {
         return min==-2 ? -1 : min ;
     }
 
+    /*
+        2. 将子问题的递归结果存入备忘录中（memo中）
+    */
     public static  int  Solution2_Force (int n) {
         if ( memo2.containsKey(n) ) return memo2.get(n);
         if (n==0) return 0;
@@ -51,14 +57,27 @@ public class CoinChange {
         return min==-2 ? -1 : min ;
     }
 
-//    public static  int  Solution3_Force (int n) {
-    先循环n
-    在循环c
-//    }
+    /*
+        3. 加入对n的循环，使递归操作变为对备忘录数据的读取
+    */
+    public static  int  Solution3_Force (int n) {
+        memo3.put(0,0);
+        for (int i=1;i<=n;i++) {
+            int min=-2;
+            for (int j=0;j<c.length;j++) {
+                if (c[j]>i) continue;
+                int temp = memo3.get(i-c[j]);
+                min = min ==-2 ? temp+1 :Math.min(temp+1,min);
+            }
+            memo3.put(i,min==-2 ? -1 : min);
+        }
+        return memo3.get(n);
+    }
 
     public  static void main (String[] args) {
-        System.out.println( Solution1_Force (11));
-        System.out.println( Solution2_Force (11));
+        System.out.println( Solution1_Force (6));
+        System.out.println( Solution2_Force (6));
+        System.out.println( Solution3_Force (6));
         System.out.println(memo2);
 
     }
