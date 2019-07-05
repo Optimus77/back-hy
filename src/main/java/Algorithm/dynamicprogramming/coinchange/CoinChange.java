@@ -52,6 +52,8 @@ public class CoinChange {
     }
 
 //    public static  int  Solution3_Force (int n) {
+    先循环n
+    在循环c
 //    }
 
     public  static void main (String[] args) {
