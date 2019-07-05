@@ -42,35 +42,17 @@ public class CoinChange {
         int min =-2;
         for (int i=0;i<c.length;i++) {
             memo2.put(c[i],1);
-            if (c[i]>n) {
-                continue;
-            } else {
-                int  temp = memo2.containsKey(n) ? memo2.get(n) : Solution2_Force  (n-c[i] );
-                if (temp ==-1) continue;
-                min = min ==-2 ? temp+1 :Math.min(temp+1,min);
-            }
+            if (c[i]>n) continue;
+            int  temp = memo2.containsKey(n) ? memo2.get(n) : Solution2_Force  (n-c[i] );
+            if (temp ==-1) continue;
+            min = min ==-2 ? temp+1 :Math.min(temp+1,min);
         }
         memo2.put(n,min==-2 ? -1 : min);
         return min==-2 ? -1 : min ;
     }
 
-    public static  int  Solution3_Force (int n) {
-        if ( memo3.containsKey(n) ) return memo3.get(n);
-        if (n==0) return 0;
-        int min =-2;
-        for (int i=0;i<c.length;i++) {
-            memo3.put(c[i],1);
-            if (c[i]>n) {
-                continue;
-            } else {
-                int  temp = memo3.containsKey(n) ? memo3.get(n) : Solution3_Force  (n-c[i] );
-                if (temp ==-1) continue;
-                min = min ==-2 ? temp+1 :Math.min(temp+1,min);
-            }
-        }
-        memo3.put(n,min==-2 ? -1 : min);
-        return min==-2 ? -1 : min ;
-    }
+//    public static  int  Solution3_Force (int n) {
+//    }
 
     public  static void main (String[] args) {
         System.out.println( Solution1_Force (11));
