@@ -58,7 +58,7 @@ public class CoinChange {
     }
 
     /*
-        3. 加入对n的循环，使递归操作变为对备忘录数据的读取
+        3. 加入对n的循环，使递归操作变为对备忘录数据的读取，目的是把全部n放入备忘录中，最后再memo.get(n)即可。
     */
     public static  int  Solution3_Force (int n) {
         memo3.put(0,0);

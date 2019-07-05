@@ -20,7 +20,8 @@ public class Fibonacci {
     }
     /*
     *   2. 将子问题的递归结果存入备忘录中（memo中）
-    *   3. 加入对n的循环，使递归操作变为对备忘录数据的读取
+    *   3. 加入对n的循环，使递归操作变为对备忘录数据的读取，目的是把全部n放入备忘录中，最后再memo.get(n)即可。
+    *
     */
     public static  int Solution2_Memo_dp(int n) {
         Map<Integer,Integer > memo =new HashMap<>();
