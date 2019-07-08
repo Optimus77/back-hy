@@ -42,14 +42,14 @@ public class CoinChange {
     /*
         2. 将子问题的递归结果存入备忘录中（memo中）
     */
-    public static  int  Solution2_Force (int n) {
+    public static  int Solution2_Memo(int n) {
         if ( memo2.containsKey(n) ) return memo2.get(n);
         if (n==0) return 0;
         int min =-2;
         for (int i=0;i<c.length;i++) {
             memo2.put(c[i],1);
             if (c[i]>n) continue;
-            int  temp = memo2.containsKey(n) ? memo2.get(n) : Solution2_Force  (n-c[i] );
+            int  temp = memo2.containsKey(n) ? memo2.get(n) : Solution2_Memo(n-c[i] );
             if (temp ==-1) continue;
             min = min ==-2 ? temp+1 :Math.min(temp+1,min);
         }
@@ -60,7 +60,7 @@ public class CoinChange {
     /*
         3. 加入对n的循环，使递归操作变为对备忘录数据的读取，目的是把全部n放入备忘录中，最后再memo.get(n)即可。
     */
-    public static  int  Solution3_Force (int n) {
+    public static  int Solution3_Dp(int n) {
         memo3.put(0,0);
         for (int i=1;i<=n;i++) {
             int min=-2;
@@ -76,8 +76,8 @@ public class CoinChange {
 
     public  static void main (String[] args) {
         System.out.println( Solution1_Force (6));
-        System.out.println( Solution2_Force (6));
-        System.out.println( Solution3_Force (6));
+        System.out.println( Solution2_Memo(6));
+        System.out.println( Solution3_Dp(6));
         System.out.println(memo2);
 
     }
