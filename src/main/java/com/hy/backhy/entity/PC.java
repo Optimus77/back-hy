@@ -3,11 +3,13 @@ package com.hy.backhy.entity;
 import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.context.annotation.Scope;
 
 import javax.persistence.*;
 @Data
 @Entity
 @Table(name="pc")
+@Scope(value="singleton")
 public class PC {
     @Id
     private String id;

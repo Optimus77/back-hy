@@ -1,8 +1,11 @@
 package DesignPattern.Singleton;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class SyncLazy {
     private static SyncLazy instance;
-
+    static volatile boolean  flag = true;
     private SyncLazy() {
     }
 
@@ -12,4 +15,7 @@ public class SyncLazy {
         }
         return instance;
     }
+
+
+
 }
