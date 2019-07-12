@@ -13,6 +13,8 @@ public class Test {
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(1);
         ExecutorService workStealingPool = Executors.newWorkStealingPool();
 
+        fixedThreadPool.shutdown();
+
 
 
         /*
@@ -45,6 +47,9 @@ public class Test {
                 System.out.println("first thread delay 10 seconds, and every 3 seconds between old thread done and new thread begin" );
             }
         }, 10, 3, TimeUnit.SECONDS);
+
+
+
 
     }
 }

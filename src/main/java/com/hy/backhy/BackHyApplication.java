@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.HttpStatus;
@@ -32,11 +33,10 @@ public class BackHyApplication {
 
 	public static void main(String[] args)
 	{
-		SpringApplication.run(BackHyApplication.class, args);
-
-//		new AnnotationConfigApplicationContext(BackHyApplication.class);
-
-		System.out.println(new AnnotationConfigApplicationContext(BackHyApplication.class).getBean("Testbean"));
+		ConfigurableApplicationContext context = SpringApplication.run(BackHyApplication.class, args);
+		Testbean testbean = context.getBean(Testbean.class);
+		testbean.setName("aaaa");
+		System.out.println(testbean);
 
 	}
 }

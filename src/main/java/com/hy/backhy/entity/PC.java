@@ -4,15 +4,15 @@ import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.context.annotation.Scope;
-
+import org.springframework.stereotype.Component;
 import javax.persistence.*;
-@Data
+
 @Entity
 @Table(name="pc")
-@Scope(value="singleton")
 public class PC {
     @Id
     private String id;
+    @Column(name = "name")
     private String name;
     private String price;
     private String title;
