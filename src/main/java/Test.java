@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Test {
-
+    String name;
 
     public static void main(String[] args) {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
@@ -14,8 +17,6 @@ public class Test {
         ExecutorService workStealingPool = Executors.newWorkStealingPool();
 
         fixedThreadPool.shutdown();
-
-
 
         /*
         *   scheduledThreadPool适用于执行周期任务，
