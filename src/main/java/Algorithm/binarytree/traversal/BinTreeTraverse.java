@@ -2,6 +2,8 @@ package Algorithm.binarytree.traversal;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class BinTreeTraverse {
     private static int[] dataArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9,10 }; //一个存放节点的值的数组容器
@@ -96,6 +98,8 @@ public class BinTreeTraverse {
         System.out.println("后序遍历");
         backTraverse(nodeList.get(0));
 
+        Map<String,String> tree = new TreeMap<>();
+        tree.put("a","b");
     }
 
 
