@@ -25,14 +25,18 @@ public class MaxGiftValue {
             {3,7,16,5}
     } ;
     static int[][] memo =new int[4][4];
-
+    static int[][] memo3 =new int[4][4];
 
     /**
      * 方案2：递归+memo
      * */
     public int getMaxFuction2(int i, int j) {
+        if(memo[i][j]!=0){
+            return memo[i][j];
+        }
+
         if (i==0 && j==0) {
-            return memo[0][0] = gift[0][0];
+            return memo[i][j] = gift[0][0];
         }
         if (i==0 && j!=0) {
             return memo[i][j] = getMaxFuction2(i,j-1)+gift[i][j];
@@ -47,7 +51,25 @@ public class MaxGiftValue {
     /**
      * 方案3：循环+memo
      * */
+    public void getMaxFuction3() {
+        for (int m =0 ;m<gift.length;m++) {
+            for (int n =0 ;n<gift[0].length;n++) {
+                if (m==0 && n==0) {
+                    memo3[m][n] = gift[0][0];
+                }
+                if (m==0 && n!=0) {
+                    memo3[m][n] = memo3[m][n-1]+gift[m][n];
+                }
+                if (m!=0 && n==0) {
+                    memo3[m][n] = memo3[m-1][n]+gift[m][n];
+                }
+                if (m!=0 && n!=0) {
+                    memo3[m][n] = Math.max(memo3[m-1][n],memo3[m][n-1])+gift[m][n];
+                }
+            }
+        }
 
+    }
 
     public static void main(String[] args) {
         MaxGiftValue m =new MaxGiftValue();
@@ -56,6 +78,12 @@ public class MaxGiftValue {
         System.out.println(Arrays.toString(memo[1]));
         System.out.println(Arrays.toString(memo[2]));
         System.out.println(Arrays.toString(memo[3]));
+
+        m.getMaxFuction3();
+        System.out.println(Arrays.toString(memo3[0]));
+        System.out.println(Arrays.toString(memo3[1]));
+        System.out.println(Arrays.toString(memo3[2]));
+        System.out.println(Arrays.toString(memo3[3]));
     }
 
 
