@@ -1,9 +1,11 @@
 package com.hy.backhy.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name="phone")
 public class Phone  {

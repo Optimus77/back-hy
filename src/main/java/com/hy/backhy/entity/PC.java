@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name="pc")
 public class PC {

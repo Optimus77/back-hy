@@ -5,11 +5,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.hy.backhy.Impl.StuInvocationHandler;
 import com.hy.backhy.Impl.Student;
 import com.hy.backhy.entity.PC;
-import com.hy.backhy.entity.Phone;
 import com.hy.backhy.entity.Testbean;
 import com.hy.backhy.repository.PcRepository;
 import com.hy.backhy.repository.Person;
-import com.hy.backhy.repository.PhoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -35,7 +33,7 @@ public class BackHyApplication {
 	{
 		ConfigurableApplicationContext context = SpringApplication.run(BackHyApplication.class, args);
 		Testbean testbean = context.getBean(Testbean.class);
-		testbean.setName("aaaa");
+//		testbean.setName("aaaa");
 		System.out.println(testbean);
 
 	}
