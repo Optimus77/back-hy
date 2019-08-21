@@ -1,4 +1,5 @@
 package Thread;
 
-public class Runnable {
+public abstract class Runnable {
+    public abstract void run();
 }
