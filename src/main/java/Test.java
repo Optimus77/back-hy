@@ -72,14 +72,14 @@ public class Test {
 //        *                                       ）
 //        *
 //        * */
-//        ((ScheduledExecutorService) scheduledThreadPool).scheduleAtFixedRate(new Runnable() {
+//        ((ScheduledExecutorService) scheduledThreadPool).scheduleAtFixedRate(new MyRunnable() {
 //            @Override
 //            public void run() {
 //                System.out.println("first thread delay 10 seconds, and every 3 seconds Execute one thread");
 //            }
 //        }, 10, 3, TimeUnit.SECONDS);
 //
-//        ((ScheduledExecutorService) scheduledThreadPool).scheduleWithFixedDelay(new Runnable() {
+//        ((ScheduledExecutorService) scheduledThreadPool).scheduleWithFixedDelay(new MyRunnable() {
 //            @Override
 //            public void run() {
 //                System.out.println("first thread delay 10 seconds, and every 3 seconds between old thread done and new thread begin" );
