@@ -1,9 +1,7 @@
 package Thread;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.Random;
+import java.util.concurrent.*;
 
 public class ThreadPool {
 
@@ -29,7 +27,26 @@ public class ThreadPool {
                     return "hyCallable";
                 }
         );
+
+
+        ExecutorService cachedThreadPool2 = Executors.newCachedThreadPool();
+        ScheduledExecutorService  scheduledThreadPool = Executors.newScheduledThreadPool(5);
+        Future<Integer> result = scheduledThreadPool.schedule(new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                int num = new Random().nextInt(100);//生成随机数
+                System.out.println(Thread.currentThread().getName() + " : " + num);
+                return num;
+            }
+        }, 3, TimeUnit.SECONDS);
+
+        ExecutorService singleThreadPool = Executors.newSingleThreadExecutor();
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(1);
+        ExecutorService newWorkStealingPool = Executors.newWorkStealingPool();
     }
+
+
+
 
 
 }
