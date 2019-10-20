@@ -49,6 +49,9 @@ public class Test2 {
         char c2 = 41;
         System.out.println(Integer.valueOf(c));
         System.out.println(c2);
+        System.out.println(c2);
+
+
 
 
 
