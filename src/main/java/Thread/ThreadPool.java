@@ -8,7 +8,7 @@ public class ThreadPool {
     public static void main(String[] args) {
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
 
-        cachedThreadPool.submit(
+        cachedThreadPool.execute(
                 new Runnable() {
                     @Override
                     public void run() {

@@ -15,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 @RestController
 @SpringBootApplication
@@ -35,6 +37,6 @@ public class BackHyApplication {
 		Testbean testbean = context.getBean(Testbean.class);
 //		testbean.setName("aaaa");
 		System.out.println(testbean);
-
+		Executors.newFixedThreadPool(2);
 	}
 }
