@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
-public class Test2 {
+public class Test2ConstPool {
 
     static int a = 1;
     static String name = "name";
@@ -32,7 +35,7 @@ public class Test2 {
 //    }
 
     public static void main(String[] args) {
-//        Test2 t = new Test2();
+//        Test2ConstPool t = new Test2ConstPool();
 //        Hy h =new Hy();
 //        t.test3(i);
 //        System.out.println(a);
@@ -51,8 +54,21 @@ public class Test2 {
         System.out.println(c2);
         System.out.println(c2);
 
+        System.out.println("name" == ("name"));
+        String name1 = "name";
+        String name2 = "name";
+        System.out.println(name1 == name2);
+
+        Integer i1 = 128;
+        Integer i2 = 128;
+        Integer i3 = 129;
+        Integer i4 = 129;
+        System.out.println(i1 == i2);
+        System.out.println(i3 == i4);
 
 
+        Lock lock = new ReentrantLock(true);
+        lock.tryLock();
 
 
     }
