@@ -1,0 +1,2 @@
+CompilerOracle: dontinline *Test18PrintAssembly.hy
+CompilerOracle: compileonly *Test18PrintAssembly.hy

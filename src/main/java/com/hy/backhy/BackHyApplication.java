@@ -26,17 +26,13 @@ import java.lang.reflect.Proxy;
 import java.util.List;
 import java.util.concurrent.Executors;
 
-@RestController
 @SpringBootApplication
-@Import(Testbean.class)
+
 public class BackHyApplication {
 
 	public static void main(String[] args)
 	{
-		ConfigurableApplicationContext context = SpringApplication.run(BackHyApplication.class, args);
-		Testbean testbean = context.getBean(Testbean.class);
-//		testbean.setName("aaaa");
-		System.out.println(testbean);
-		Executors.newFixedThreadPool(2);
+		SpringApplication.run(BackHyApplication.class, args);
+
 	}
 }

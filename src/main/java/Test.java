@@ -52,11 +52,12 @@ public class Test {
 
 
 
-//        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
-//        ExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(2);
-//        ExecutorService singleThreadPool = Executors.newSingleThreadExecutor();
-//        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(1);
-//        ExecutorService workStealingPool = Executors.newWorkStealingPool();
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        ExecutorService scheduledThreadPool = Executors.newScheduledThreadPool(2);
+        ExecutorService singleThreadPool = Executors.newSingleThreadExecutor();
+        ExecutorService fixedThreadPool = Executors.newFixedThreadPool(1);
+        ExecutorService workStealingPool = Executors.newWorkStealingPool();
+
 //
 //        fixedThreadPool.shutdown();
 //

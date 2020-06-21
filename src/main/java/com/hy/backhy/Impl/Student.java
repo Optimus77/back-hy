@@ -10,14 +10,19 @@ public class Student implements Person {
         this.name = name;
     }
 
+
     @Override
-    public void giveMoney() {
-        System.out.println(this.name);
-        System.out.println("50元");
+    public void giveMoney(int i) {
+
     }
 
     @Override
     public void giveMoney2() {
         System.out.println("100元");
+    }
+
+    @Override
+    public void giveMoney(String s) {
+
     }
 }
